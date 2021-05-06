@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// __gcd(a,b) in Algorithm instead of creating own function
+
 long long FPB(long long x,long long y){
 	if(y==0){
 		return x;
