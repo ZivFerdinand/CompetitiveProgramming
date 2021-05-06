@@ -14,6 +14,7 @@ int main(){
 	}
 
 	sort(arr2,arr2+n);
+	//Diff Checker
 	int beda=0;
 
 	for(int i=0;i<n;i++){
