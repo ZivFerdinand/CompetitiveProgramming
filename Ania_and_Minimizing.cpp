@@ -17,6 +17,7 @@ int main(){
 
    string s;
    cin >> s;
+   //Check Size of The String Input
    int s_len=s.size();
 
    int cnt=0;
