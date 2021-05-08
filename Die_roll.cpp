@@ -13,6 +13,6 @@ int main(){
 }
 /*
 
-
+gcd=fpb
 
 */
