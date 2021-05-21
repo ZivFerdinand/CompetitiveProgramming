@@ -30,3 +30,7 @@ int main(){
 
    	(cnt==m)?cout << "YES\n":cout << "NO\n";
 }	 
+
+/*
+
+*/
