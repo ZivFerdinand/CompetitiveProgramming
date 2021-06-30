@@ -1,0 +1,54 @@
+Sebuah password (kata sandi) yang terdiri dari 5 angka. Angka ke-4 lebih besar daripada angka ke-2 dengan selisih 4.  Sementara angka ke-3 kurang dari angka ke-2 dengan selisih 3. Angka pertama adalah 3 kali lipat angka terakhir.  Ada 3 pasang angka dengan jumlah 11. Berapakah angka ke-4 dari password tersebut?
+
+ke-4 > ke-2 (selisih 4)
+ke-2 > ke-3 (selisih 3)
+ke-1 = 3 x ke-5
+ada 3 pasang angka berjumlah 11
+
+9 5 7 3 4
+
+angka ke 4 = 9
+
+3 5 2 9 9
+
+angka ke 4 = 5
+
+4 1 -2 5 12
+
+4 6 8 12 18
+
+2x3x6
+2x2x9
+3x3x4
+
+12 15 18 21 24 27 30 33 36 39 42 45 48 51 54 57 60 63 66 69 72 75 78 81 84 87 90 93 96 99
+
+
+3 3 3 4 1 6 6 3 2 3 2 2 7 3 5
+6 7 7 9 5 4 15
+13 16 9 15
+29 24
+53
+
+
+var arr: array[1..10] of integer;
+ i, j, s: integer;
+	begin
+ 		for i := 1 to 10 do
+ arr[i] := i + 1;
+ for i := 1 to 10 do
+ begin
+ for j:= i+1 to 10 do
+ begin
+ if (arr[i] = -1)then break;
+ s := arr[j] div arr[i];
+ if (s * arr[i] = arr[j]) then
+ begin
+ arr[i] := arr[i] + arr[j];
+ arr[j] := arr[i] - arr[j];
+ arr[i] := arr[i] - arr[j];
+ arr[i] := -1;
+ end;
+ end;
+ end;
+end.

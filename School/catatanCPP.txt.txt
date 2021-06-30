@@ -1,0 +1,23 @@
+(&&) T T = T		{ selain itu == F }
+(||) F F = F		{ selain itu == T }
+(^ ) TT || FF = F	{ selain itu == T }
+
+-------------------------------------------------
+
+!n = (n-1)(!(n-1)+!(n-2));
+
+-------------------------------------------------
+
+rumus diagoal suatu bangun datar segi-N = C(N,2) - N;
+rumus N orang bersalaman = C(N,2);
+
+-------------------------------------------------
+syarat segitiga: c>b>a dan a+b>c
+
+-------------------------------------------------
+Compile (C++ x) -> g++ -std=c++14 -o prog (nama).cpp
+Compile 	-> g++ -o prog (nama).cpp
+Run		-> prog
+
+-------------------------------------------------
+mp3paw.com https://t.co/yplMwxGW2Z?amp=1
