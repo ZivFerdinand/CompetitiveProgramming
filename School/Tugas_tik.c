@@ -5,6 +5,7 @@
 #define radiansToDegrees(angleRadians) ((angleRadians) * 180.0 / M_PI) // untuk shortcut operasi radian ke derajat
 
 long long binaryToDecimal(long long n){ // fungsi yang mengembalikan nilai bilangan bulat (longlong)
+    long long num = n; // deklaratsi var num sebagai bilangan bulat dan berisi n
     int dec_value = 0; // deklarasi var dec_value sebagai bilangan bulat bernilai 0
     long long base = 1; // deklarasi var base sebagai bilangan bulat bernilai 1
   
