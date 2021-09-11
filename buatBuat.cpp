@@ -10,34 +10,41 @@
 #include <deque>
 #define ll long long
 using namespace std;
+int sepatuBebek[1010];
+int sepatuBaru[1010];
+bool datum[1010];
+
 
 int main(){
-    int arr[10], arr2[10];
-    int n;
-    cin >> n;
+    memset(datum, 0, sizeof datum);
+    int n, m, lastM_Index=0;
+    cin >> n >> m;
 
-    while(n--)
+    for (int i = 0; i < n;i++)
+        cin >> sepatuBebek[i];
+    for (int i = 0; i < m;i++)
+        cin >> sepatuBaru[i];
+
+    sort(sepatuBebek, sepatuBebek + n);
+    sort(sepatuBaru, sepatuBaru + m);
+    int total = 0;
+    for (int i = 0; i < n; i++)
     {
-        for (int i = 0; i < 4;i++)
+        while(sepatuBaru[lastM_Index] <= sepatuBebek[i] + 1 && lastM_Index < m)
         {
-            cin >> arr[i];
-            arr2[i] = arr[i];
-        }
-
-        sort(arr2, arr2 + 4);
-
-        if(max(arr[0],arr[1])==arr2[2] || max(arr[0],arr[1])==arr2[3])
-        {
-            if(max(arr[2],arr[3])==arr2[2] || max(arr[2],arr[3])==arr2[3])
+            if(datum[lastM_Index] == false)
+            if(sepatuBebek[i] == sepatuBaru[lastM_Index] || sepatuBebek[i] + 1 == sepatuBaru[lastM_Index])
             {
-                cout << "YES\n";
-                continue;
+                datum[lastM_Index++] = true;
+                total++;
+                break;
             }
+            lastM_Index++;
         }
-        cout << "NO\n";
     }
-}	 
-
+    cout << total << '\n';
+}
 /*
-10 3 5 1
+   10 10 11 12 13
+9  10 11 11 13
 */
