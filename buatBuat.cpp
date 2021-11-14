@@ -11,22 +11,36 @@
 #include <deque>
 #define ll long long
 using namespace std;
-int main(){
-    int n,d;
-    cin >> n >> d;
 
-    if(d==1)
-        cout << "NO\n";
-        else
-            cout << "YES\n";
+int main(){
+    int n, m, cnt, x;
+    cin >> n >> m;
+
+    int arr[110] = {};
+
+    for (int i = 0; i < n;i++)
+    {
+        cnt = 0;
+        for (int j = 0; j < m;j++)
+        {
+            cin >> x;
+            cnt += x;
+            cout << x << ' ';
+
+            arr[j] += x;
+        }
+        cout << cnt << '\n';
+        arr[m] += cnt;
+    }
+
+    for (int i = 0; i <= m;i++)
+    {
+        cout << arr[i];
+        if(i<m)
+            cout << ' ';
+    }
+    cout << '\n';
 }
 /*
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1
--1  0  0  0  0  0 -1  0  0  0
--1  0  0 -1 -1  0  0  0 -1 -1
--1 -1  0  0 -1 -1 -1  0  0 -1
--1  0  0  0 -1  0 -1 -1 -1 -1
--1  0 -1  0 -1  0 -1  0  0 -1
--1  0 -1  0 XX  0  0  0 -1 -1
--1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+
 */
