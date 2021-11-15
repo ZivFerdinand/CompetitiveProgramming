@@ -13,33 +13,44 @@
 using namespace std;
 
 int main(){
-    int n, m, cnt, x;
-    cin >> n >> m;
+    int q;
+    cin >> q;
 
-    int arr[110] = {};
-
-    for (int i = 0; i < n;i++)
+    ll n, h, x;
+    ll max1, max2;
+    while(q--)
     {
-        cnt = 0;
-        for (int j = 0; j < m;j++)
+        cin >> n >> h;
+        max1 = max2 = 0;
+        for (int i = 0; i < n;i++)
         {
             cin >> x;
-            cnt += x;
-            cout << x << ' ';
-
-            arr[j] += x;
+            if(x>max1)
+            {
+                max2 = max1;
+                max1 = x;
+            }
+            else if(x>=max2)
+                max2 = x;
         }
-        cout << cnt << '\n';
-        arr[m] += cnt;
-    }
 
-    for (int i = 0; i <= m;i++)
-    {
-        cout << arr[i];
-        if(i<m)
-            cout << ' ';
+        if(h-max1 < 0)
+        {
+            cout << 1 << '\n';
+            continue;
+        }
+        else
+        {
+            int ans = h / (max2 + max1);
+            if(h%(max2+max1))
+                ans++;
+
+            int xx = 0;
+            if(h-(ans*(max1+max2)) + max2 <= 0)
+                xx=1;
+            cout << ans*2-xx<< '\n';
+        }
     }
-    cout << '\n';
 }
 /*
 
