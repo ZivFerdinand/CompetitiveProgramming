@@ -1,3 +1,2 @@
 
-    // cout << rightToLeft << '\n'
-    //      << leftToRight << '\n';
+        cout << temp << '\n';

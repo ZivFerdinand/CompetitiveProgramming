@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <cmath>
 #include <string>
+#include <string.h>
 #include <cstring>
 #include <iomanip>
 #include <map>
@@ -12,37 +13,38 @@
 #define ll long long
 using namespace std;
 
-int main(){
-    int n = 9, x;
-    ll cnt;
-    while(cin >> x)
+int main()
+{
+    int n, originalVal;
+    cin >> n;
+
+	originalVal = pow(2, n) - 1;
+	n = originalVal;
+
+	int space = 0;
+    string temp;
+	
+    while(n > 0)
     {
-        cnt = 0;
-        if(x==0 && n==0)
+        for (int i = 0; i < (originalVal - n - space) / n;i++)
         {
-            continue;
+			if(!i)
+				temp = "";
+			temp += " ";
         }
 
-        int i, j, k, l;
-        for (i = 0; i <= n/* && i + j + k <= x*/; i++)
+        for (int i = 0; i < n; i++)
         {
-            for (j = 0; j <= n/* && i + j + k <= x*/;j++)
-            {
-                for (k = 0; k <= n/* && i + j + k <= x*/;k++)
-                {
-                    for (l = 0; l <= n/* && i + j + k <= x*/;l++)
-                    {
-                        if(i+j+k+l==x)
-                            cnt++;
-                    }
-                }
-            }
+            cout << temp << '*';
         }
 
-        cout << cnt << '\n';
+        cout << '\n';
+        n /= 2;
+
+        space *= 2;
+        space++;
     }
 }
 /*
-0 1 2 3 4   = 5
-0 1 2 3 4 5 = 6
+
 */
