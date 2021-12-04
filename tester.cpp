@@ -15,44 +15,23 @@ using namespace std;
 
 int main()
 {
-    int n, originalVal;
-    cin >> n;
-    originalVal = n;
 
-    int space = 0;
-    string temp;
-
-    //n *= 2;
-    while(n > 0)
+    int n = 35;
+    int ind;
+    double minn = n * 10;
+    for (double i = 1; i < n; i++)
     {
-
-        //temp = "";
-        // Create Spacet
-        temp = "";
-        for (int i = 0; i < (originalVal - n - space) / n;i++)
+        double x = i + ceil(n / (i + 1));
+        if(minn>x)
         {
-            temp += " ";
+            minn = x;
+            ind = i;
         }
-
-        for (int i = 0; i < n; i++)
-        {
-            cout << temp << '*';
-        }
-
-        cout << '\n';
-        n /= 2;
-
-        space *= 2;
-        space++;
     }
+    cout << ind;
 }
 /*
-***************
- * * * * * * *
-   *   *   *
-       *
-        
-       
-********
- * * * 
+1000 -> 27
+3000 -> 49
+35 -> 4
 */

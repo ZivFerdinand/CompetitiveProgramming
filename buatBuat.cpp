@@ -13,6 +13,8 @@
 #define ll long long
 using namespace std;
 
+int arr[200000] = {};
+
 int main()
 {
     int n, originalVal;
@@ -23,19 +25,24 @@ int main()
 
 	int space = 0;
     string temp;
-	
+    int q;
+
     while(n > 0)
     {
         for (int i = 0; i < (originalVal - n - space) / n;i++)
         {
 			if(!i)
-				temp = "";
-			temp += " ";
+                temp = "", q = 0;
+            temp += " ", q++;
         }
 
+        int savee = 0;
         for (int i = 0; i < n; i++)
         {
             cout << temp << '*';
+            savee += q + 1;
+            if(space)
+                arr[savee]++;
         }
 
         cout << '\n';
@@ -44,7 +51,55 @@ int main()
         space *= 2;
         space++;
     }
+
+    cout << '\n';
+    for (int i = 1; i < originalVal; i++)
+    {
+        cout << '*';
+        for (int j = 0; j < arr[i]; j++)
+            cout << '*';
+
+        cout << '\n';
+    }
+    cout << "*\n";
 }
 /*
+*******************************
+ * * * * * * * * * * * * * * *
+   *   *   *   *   *   *   *
+       *       *       *
+               *
+
+*
+**
+*
+***
+*
+**
+*
+****
+*
+**
+*
+***
+*
+**
+*
+*****
+*
+**
+*
+***
+*
+**
+*
+****
+*
+**
+*
+***
+*
+**
+*
 
 */

@@ -1,2 +1,1 @@
-
-        cout << temp << '\n';
+space
