@@ -11,32 +11,29 @@
 #include <queue>
 #include <deque>
 #define ll long long
+#define ld long double
 using namespace std;
+
 
 int main()
 {
-    int n, originalVal;
-    cin >> n;
+    int q;
+    cin >> q;
 
-	originalVal = pow(2, n) - 1;
-	n = originalVal;
-
-	int space = 0;
-    string temp;
-
-    for (int i = 0; i < originalVal; i++)
+    ld n;
+    while(q--)
     {
-        cout << '*';
+        cin >> n;
+        n /= 2;
+        n = trunc(n);
+        
+        n = (ll)((n + 2 * (n * n * n)) / 3 + (n * n));
+        ll x = n;
+        cout << x * 4 << '\n';
     }
 }
-/*
 
-*
-**
-*
-***
-*
-**
-*
+/*
+()(()()()((()()()(((())))()))()(
 
 */
