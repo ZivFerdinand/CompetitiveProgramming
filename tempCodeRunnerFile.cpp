@@ -1,2 +1,2 @@
 
-int arr[200000] = {};
+        cout << total << '\n';
