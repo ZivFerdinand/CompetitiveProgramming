@@ -14,13 +14,12 @@
 #define ld long double
 using namespace std;
 
-
 int main()
 {
-    int n;
-    cin >> n;
+    int a,b,c;
+    cin >> a >> b >> c;
 
-    (n % 2) ? cout << "Perlu\n" : cout << "Tidak\n";
+    (a + b + c >= 200 && a >= 50 && b >= 50 && c >= 50) ? cout << "Lolos\n" : cout << "Tidak Lolos\n";
 }
 
 /*

@@ -14,13 +14,17 @@
 #define ld long double
 using namespace std;
 
-
 int main()
 {
-    int n;
-    cin >> n;
+    int arr[5];
+    for (int i = 0; i < 3;i++)
+        cin >> arr[i];
 
-    (n % 2) ? cout << "Perlu\n" : cout << "Tidak\n";
+    sort(arr, arr + 3);
+
+    cout << arr[0] << '\n'
+         << arr[2] << '\n'
+         << arr[1];
 }
 
 /*
