@@ -16,9 +16,18 @@ using namespace std;
 
 int main()
 {
-    
+    int q;
+    ll n;
+    cin >> q;
+
+    while(q--)
+    {
+        cin >> n;
+        cout << 2 << ' ' << n - 1 << '\n';
+    }
 }
 
 /*
+
 
 */

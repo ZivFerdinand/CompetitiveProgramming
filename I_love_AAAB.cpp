@@ -16,7 +16,26 @@ using namespace std;
 
 int main()
 {
+    int q;
+    cin >> q;
     
+    while(q--)
+    {
+        string s;
+		cin>>s;
+
+        bool ok = (s[s.size() - 1] == 'B');
+
+        int sum=0;
+		for (auto it:s){
+			if (it=='A') sum++;
+			else sum--;
+			if (sum<0) ok=false;
+		}
+		
+		if (ok) cout<<"YES"<<endl;
+		else cout<<"NO"<<endl;
+    }
 }
 
 /*
