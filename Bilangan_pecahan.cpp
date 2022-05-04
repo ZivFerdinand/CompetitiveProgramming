@@ -16,13 +16,19 @@ using namespace std;
 
 int main()
 {
-    
+    int a, b;
+    cin >> a >> b;
+
+    if(__gcd(a,b)==1)
+    {
+        cout << "Tidak\n";
+    }
+    else
+    {
+        cout << a / __gcd(a, b) << ' ' << b / __gcd(a, b) << '\n';
+    }
 }
 
 /*
-20
-3
 
-2
-5
 */
