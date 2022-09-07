@@ -1,20 +1,29 @@
 #include<stdio.h>
+
+long long arr[10050], x;
+
 int main()
 {
-    int q, n, x;
-    long long sum;
+    int q, cnt, n;
     scanf("%d", &q);
 
     for (int i = 1; i <= q;i++)
     {
+        cnt = 0;
         scanf("%d", &n);
-        sum = 0;
-        while(n--)
+        for (int k = 0; k < n; k++)
         {
-            scanf("%d", &x);
-            sum += x;
+            scanf("%lld", &arr[k]);
         }
 
-        printf("Case #%d: %lld\n", i, sum);
+        for (int j = 0; j < n;j++)
+        {
+            scanf("%lld", &x);
+            if (x > arr[j])
+                cnt++;
+        }
+        printf("Case #%d: ", i);
+
+        printf("%d\n", cnt);
     }
 }

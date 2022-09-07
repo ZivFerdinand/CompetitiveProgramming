@@ -1,36 +1,31 @@
-#include <stdio.h>
-
-int a, b;
-void printer(int aa){
-    for (int i = 0; i < a;i++)
-    {
-        for (int j = 0; j < a;j++)
-        {
-            if(aa==1)
-                printf("#");
-            else if(aa==2)
-            {
-                ((i + 1) % b == 0) ? printf("#") : printf(".");
-            }
-            else
-            {
-                ((j + 1) % b == 0) ? printf("#") : printf(".");
-            }
-            
-        }
-        printf("\n");
-    }
-}
-
+#include<stdio.h>
 
 int main()
 {
-    scanf("%d %d", &a, &b);
+    int q, n;
+    long long x;
+    scanf("%d", &q);
 
-    printer(1);
-    printf("\n");
-    printer(2);
-    printf("\n");
-    printer(3);
-    printf("\n");
+    for (int i = 1; i <= q;i++)
+    {
+        long long arr[200]={};
+        scanf("%d", &n);
+        for (int j = 0; j < n;j++)
+        {
+            for (int k = 0; k < n;k++)
+            {
+                scanf("%d", &x);
+                arr[k] += x;
+            }
+        }
+
+        printf("Case #%d: ", i);
+        for (int j = 0; j < n;j++)
+        {
+            printf("%d", arr[j]);
+            if(j<n-1)
+                printf(" ");
+        }
+        printf("\n");
+    }
 }
