@@ -1,29 +1,28 @@
 #include<stdio.h>
-
-long long arr[10050], x;
-
+#include<string.h>
 int main()
 {
-    int q, cnt, n;
+    int q;
     scanf("%d", &q);
+    getchar();
+
+    char s[1010];
 
     for (int i = 1; i <= q;i++)
     {
-        cnt = 0;
-        scanf("%d", &n);
-        for (int k = 0; k < n; k++)
-        {
-            scanf("%lld", &arr[k]);
-        }
-
-        for (int j = 0; j < n;j++)
-        {
-            scanf("%lld", &x);
-            if (x > arr[j])
-                cnt++;
-        }
+        scanf("%s", s);
+        getchar();
         printf("Case #%d: ", i);
+        for (int j = strlen(s) - 1; j >= 0;j--)
+        {
+            if(s[j]>=97)
+                s[j] -= 32;
+            else
+                s[j] += 32;
 
-        printf("%d\n", cnt);
+            printf("%c", s[j]);
+        }
+
+        printf("\n");
     }
 }

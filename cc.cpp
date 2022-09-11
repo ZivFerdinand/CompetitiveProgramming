@@ -1,31 +1,28 @@
 #include<stdio.h>
+#include<string.h>
 
+char s[100050];
 int main()
 {
-    int q, n;
-    long long x;
+    int q;
     scanf("%d", &q);
+    getchar();
 
     for (int i = 1; i <= q;i++)
     {
-        long long arr[200]={};
-        scanf("%d", &n);
-        for (int j = 0; j < n;j++)
+        scanf("%s", s);
+        int a[200] = {};
+        int x = 0;
+        for (int j = 0;j<strlen(s);j++)
         {
-            for (int k = 0; k < n;k++)
+            if(!a[s[j]])
             {
-                scanf("%d", &x);
-                arr[k] += x;
+                a[s[j]]++;
+                x++;
             }
         }
 
         printf("Case #%d: ", i);
-        for (int j = 0; j < n;j++)
-        {
-            printf("%d", arr[j]);
-            if(j<n-1)
-                printf(" ");
-        }
-        printf("\n");
+        (x % 2) ? printf("Unbreakable\n") : printf("Breakable\n");
     }
 }

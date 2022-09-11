@@ -1,30 +1,15 @@
 #include <stdio.h>
 
-
 int main()
 {
-    int arr[200];
-    int n, q, a, b;
-    scanf("%d", &n);
+    int n = 3;
 
-    for (int i = 0; i < n;i++)
-        scanf("%d", &arr[i]);
-
-    scanf("%d", &q);
-    for (int i = 1; i <= q;i++)
+    int x;
+    char s[110];
+    while(n--)
     {
-        scanf("%d %d", &a, &b);
-        arr[a - 1] = b;
-
-        printf("Case #%d: ", i);
-
-        for (int j = 0; j < n;j++)
-        {
-            printf("%d",arr[j]);
-            if (j < n - 1)
-                printf(" ");
-        }
-
-        printf("\n");
+        scanf("%d %s", &x, &s);
+        getchar();
+        printf("%c%c\n", s[x - 1], s[0]);
     }
 }
