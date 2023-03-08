@@ -1,2 +1,4 @@
 
-    root = del(root, 38);
+    del("caca");
+    del("haha");
+    del("fiu");
