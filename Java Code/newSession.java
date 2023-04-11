@@ -1,17 +1,18 @@
-import java.awt.*;    
-import javax.swing.*;
-import java.awt.event.*;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
-
-public class newSession extends JFrame implements ActionListener {
+public class newSession extends JFrame {
+    private JLabel label = new JLabel("0");
+    private String[] btn = new String[]{
+        "AC"
+    };
+    public newSession(){
+        setSize(200, 400);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setVisible(true);
+    }
     public static void main(String[] args)
     {
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        System.out.println("ASU");
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+        new newSession();
     }
 }

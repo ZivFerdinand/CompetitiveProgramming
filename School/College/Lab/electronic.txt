@@ -1,4 +1,0 @@
-CPU cetek#Big#10000000#4
-Flashdisk Pasir#Small#150000#10
-Headset Gamer#Medium#600000#15
-Monitor#Medium#1200000#10
